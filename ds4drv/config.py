@@ -77,7 +77,7 @@ udpopt.add_argument("--udp-port", metavar="PORT", type=int, default=26760,
 controllopt = parser.add_argument_group("controller options")
 
 
-class Config(configparser.SafeConfigParser):
+class Config(configparser.ConfigParser):
     def load(self, filename):
         self.read([filename])
 
