@@ -1,11 +1,29 @@
 ====
-ds4drv for Cemu hook - epigramx' fork for correct yaw axis multiplier, true MAC address and misc improvements
+ds4drv for Cemu hook - Expat's fork of epigramx's fork for a cut down version that provides battery health, battery LED control and motion over udp ONLY.
 ====
 
 This is a DS4 driver that includes a `cemuhook <https://cemuhook.sshnuke.net/padudpserver.html>`_ motion server. It allows to use motion data("gyro"), and other input of DualShock 4 with `Cemu <http://cemu.info/>`_ over network or locally on Linux. Rumble in Cemu is possible because of Wine XInput emulation.
 
 How to install it:
 ^^^^
+
+Nobara OS 40 installation
+
+Step 1: Install dependencies
+::
+  sudo dnf install libbluetooth-devel bluez-deprecated
+  
+Step 2: Python workaround
+::
+  pip install git+https://github.com/pybluez/pybluez.git#egg=pybluez
+
+Step 3: Install this knobbled version
+::
+  pip3 install -U https://github.com/ExpatUK/ds4drv-cemuhook/archive/master.zip
+
+
+Old steps:
+::
 
 Step 1: Install pip and python3 dev files and BlueZ dev files on Debian/Ubuntu/etc. or do the equivalent on other distros:
 ::
